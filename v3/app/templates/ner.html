@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Named Entities{% endblock %}
+{% block content %}
+<h2>Entities for: {{ article.title }}</h2>
+<p>{{ article.clean_content }}</p>
+<ul>
+{% for entity in article.entities %}
+<li>{{ entity['entity_group'] }}: {{ entity['word'] }}</li>
+{% endfor %}
+</ul>
+<a href="/">Back</a>
+{% endblock %}
+# {'entity_group': 'ORG', 'word': 'Google', 'score': 0.998, 'start': 0, 'end': 6}
+

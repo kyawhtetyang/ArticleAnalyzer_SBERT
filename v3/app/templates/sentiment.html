@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Sentiment Result{% endblock %}
+{% block content %}
+<h2>Sentiment for: {{ article.title }}</h2>
+<p>{{ article.clean_content }}</p>
+<p>Sentiment: {{ article.sentiment }}</p>
+<a href="/">Back</a>
+{% endblock %}
+

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Recommendations for: {{article.title}}</h2>
+
+<p><strong>Current Article Summary:</strong> {{article.summary}}</p>
+
+<h3>Top Recommendations:</h3>
+<ul>
+{% for r in recs %}
+<li>
+<strong>{{r.articleId}} - {{r.title}}</strong><br>
+Summary: {{r.summary}}<br>
+Keywords: {{r.keywords | join(', ')}}
+</li>
+{% endfor %}
+</ul>
+
+<a href="/">Back to All Articles</a>
+{% endblock %}
+

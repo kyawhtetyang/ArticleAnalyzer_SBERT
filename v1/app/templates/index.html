@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>News Home</title>
+</head>
+<body>
+<h1>All News Articles</h1>
+<ul>
+{% for a in articles %}
+<li>{{a.articleId}} - {{a.title}}
+<form method="post" action="/sentiment" style="display:inline;">
+<input type="hidden" name="articleId" value="{{a.articleId}}">
+<button>Check Sentiment</button>
+</form>
+</li>
+{% endfor %}
+</ul>
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All News Articles</h2>
+<ul>
+{% for a in articles %}
+<li>{{a.articleId}} - {{a.title}}
+<form method="post" action="/analysis" style="display:inline;">
+<input type="hidden" name="articleId" value="{{a.articleId}}">
+<button>Analyze</button>
+</form>
+<form method="post" action="/recommend" style="display:inline;">
+<input type="hidden" name="articleId" value="{{a.articleId}}">
+<button>Recommend</button>
+</form>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}
+

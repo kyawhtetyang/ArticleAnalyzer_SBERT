@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h2>All Articles</h2>
+<ul>
+{% for a in articles %}
+<li>{{a.articleId}} - {{a.title}}
+<form method="post" action="/sentiment" style="display:inline;">
+<input type="hidden" name="articleId" value="{{a.articleId}}">
+<button>Sentiment</button>
+</form>
+<form method="post" action="/ner" style="display:inline;">
+<input type="hidden" name="articleId" value="{{a.articleId}}">
+<button>NER</button>
+</form>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}
+

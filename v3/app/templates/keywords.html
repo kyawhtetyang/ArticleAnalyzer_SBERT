@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Keywords{% endblock %}
+{% block content %}
+<h2>Keywords for: {{ article.title }}</h2>
+<ul>
+{% for kw in article.keywords %}
+<li>{{ kw }}</li>
+{% endfor %}
+</ul>
+<a href="/">Back</a>
+{% endblock %}
+

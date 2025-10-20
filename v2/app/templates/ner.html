@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Named Entities{% endblock %}
+{% block content %}
+<h2>Entities for: {{ article.title }}</h2>
+<p>Text: {{ article.clean_content }}</p>
+<ul>
+{% for entity in article.entities %}
+<li>{{entity['entity_group']}}: {{entity['word']}}</li>
+{% endfor %}
+</ul>
+<a href="/">Back</a>
+{% endblock %}
+

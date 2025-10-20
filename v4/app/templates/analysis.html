@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Analysis for: {{article.title}}</h2>
+<p><strong>Clean Text:</strong> {{article.clean_content}}</p>
+<p><strong>Sentiment:</strong> {{article.sentiment}}</p>
+<p><strong>NER:</strong> {{article.ner}}</p>
+<p><strong>Summary:</strong> {{article.summary}}</p>
+<a href="/">Back</a>
+{% endblock %}
+

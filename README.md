@@ -62,7 +62,7 @@ It demonstrates a complete ML/NLP lifecycle: **from raw data ingestion to produc
 
 ## Folder Structure
 
-
+```bash
 v9/
 ├─ data/
 │ ├─ business_news.csv
@@ -92,7 +92,7 @@ v9/
 ├─ main.py # Pipeline runner & Flask entry
 ├─ requirements.txt
 └─ README.md
-
+```
 ---
 
 ## Setup

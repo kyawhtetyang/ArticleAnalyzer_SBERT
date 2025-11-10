@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Analysis{% endblock %}
+{% block content %}
+<h2>Analysis for: {{article.title}}</h2>
+<p><strong>Clean Text:</strong> {{article.clean_content}}</p>
+<p><strong>Sentiment:</strong> {{article.sentiment}}</p>
+<p><strong>Named Entities:</strong></p>
+<ul>{% for ent in article.ner %}<li>{{ent}}</li>{% endfor %}</ul>
+<p><strong>Summary:</strong> {{article.summary}}</p>
+<p><strong>Keywords:</strong></p>
+<ul>{% for kw in article.keywords %}<li>{{kw}}</li>{% endfor %}</ul>
+<h3>Recommended Articles:</h3>
+<ul>{% for r in recommendations %}
+<li>
+<strong>{{r.articleId}} - {{r.title}}</strong><br>
+<em>Summary:</em> {{r.summary}}<br>
+<em>Keywords:</em> {{r.keywords | join(', ')}}</li>{% endfor %}</ul>
+<a href="/">Back to All Articles</a>
+{% endblock %}
+
+{% extends "base.html" %}
+{% block title %}Analysis{% endblock %}
+{% block content %}
+<h2>Analysis for: {{article.title}}</h2>
+<p><strong>Clean Text:</strong> {{article.clean_content}}</p>
+<p><strong>Sentiment:</strong> {{article.sentiment}}</p>
+<p><strong>Named Entities:</strong></p>
+<ul>{% for ent in article.ner %}<li>{{ent}}</li>{% endfor %}</ul>
+<p><strong>Summary:</strong> {{article.summary}}</p>
+<p><strong>Keywords:</strong></p>
+<ul>{% for kw in article.keywords %}<li>{{kw}}</li>{% endfor %}</ul>
+<h3>Recommended Articles:</h3>
+<ul>{% for r in recommendations %}
+<li>
+<strong>{{r.articleId}} - {{r.title}}</strong><br>
+<em>Summary:</em> {{r.summary}}<br>
+<em>Keywords:</em> {{r.keywords | join(', ')}}</li>{% endfor %}</ul>
+<a href="/">Back to All Articles</a>
+{% endblock %}
+

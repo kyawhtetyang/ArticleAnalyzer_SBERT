@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    container_name: articleanalyzer
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=app/routes.py
+      - FLASK_ENV=development
+    volumes:
+      - .:/app
+    command: flask run --host=0.0.0.0 --port=5000
+
+version: '3.9'
+
+services:
+  app:
+    build: .
+    container_name: articleanalyzer
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=app/routes.py
+      - FLASK_ENV=development
+    volumes:
+      - .:/app
+    command: flask run --host=0.0.0.0 --port=5000
+

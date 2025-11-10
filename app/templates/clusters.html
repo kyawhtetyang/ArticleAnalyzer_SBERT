@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Clusters{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2>Article Clusters</h2>
+  <p>Grouped by semantic similarity (Sentence-Transformer + KMeans).</p>
+
+  {% for cluster_id, articles in clusters.items() %}
+  <div class="cluster-box">
+    <h3>Cluster {{ cluster_id }} ({{ articles|length }} articles)</h3>
+    <ul>
+      {% for a in articles %}
+      <li>
+        {{ a.articleId }} - {{ a.title }}
+        <form method="post" action="/analysis" style="display:inline;">
+          <input type="hidden" name="articleId" value="{{ a.articleId }}">
+          <button>View</button>
+        </form>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+
+  <a href="/">← Back to All Articles</a>
+</div>
+{% endblock %}
+
+{% extends "base.html" %}
+{% block title %}Clusters{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2>Article Clusters</h2>
+  <p>Grouped by semantic similarity (Sentence-Transformer + KMeans).</p>
+
+  {% for cluster_id, articles in clusters.items() %}
+  <div class="cluster-box">
+    <h3>Cluster {{ cluster_id }} ({{ articles|length }} articles)</h3>
+    <ul>
+      {% for a in articles %}
+      <li>
+        {{ a.articleId }} - {{ a.title }}
+        <form method="post" action="/analysis" style="display:inline;">
+          <input type="hidden" name="articleId" value="{{ a.articleId }}">
+          <button>View</button>
+        </form>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+
+  <a href="/">← Back to All Articles</a>
+</div>
+{% endblock %}
+
